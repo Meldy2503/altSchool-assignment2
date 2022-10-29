@@ -22,9 +22,7 @@ html {
 
 }
    
-  @media screen and (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
-
-    
+  @media screen and (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {    
         font-size: 58%; 
     }
 
@@ -32,9 +30,9 @@ html {
 
   body {
    font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  /* background-color: #000; */
   
-  background-size: cover;
-   /* position: relative; */
 }
 
 `;

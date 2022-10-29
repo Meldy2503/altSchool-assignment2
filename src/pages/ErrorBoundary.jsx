@@ -20,11 +20,14 @@ class ErrorBoundary extends React.Component {
       return (
         <h1
           style={{
-            position: "absolute",
-            top: "45%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             textAlign: "center",
+            color: "#f7992b",
+            backgroundColor: "#000",
+            height: "100vh",
+            width: "100%",
           }}
         >
           !OOPS&#128543; <br /> Something went wrong.

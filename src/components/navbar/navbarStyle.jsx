@@ -92,7 +92,7 @@ export const Ul = styled.ul`
 
   li {
     list-style-type: none;
-    margin-right: 3rem;
+    margin-right: 3.5rem;
 
     @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
       margin-top: 3rem;
@@ -109,6 +109,10 @@ export const Navlink = styled(NavLink)`
   text-decoration: none;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
+
+  &:hover {
+    color: #f7992b;
+  }
 
   @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
     font-size: 1.8rem;

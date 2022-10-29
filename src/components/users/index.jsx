@@ -3,18 +3,12 @@ import axios from "axios";
 import Loading from "../../components/Loading";
 import {
   Container,
+  Contents,
   Heading,
   Card,
-  CardContainer,
+  CardWrapper,
+  CardContents,
   Img,
-  Contents,
-  Name,
-  Gender,
-  Email,
-  Username,
-  Age,
-  Phone,
-  Country,
   PgNo,
   Btn,
   PgNosBtn,
@@ -49,51 +43,53 @@ const Users = () => {
 
   return (
     <Container>
-      <Heading>All Users</Heading>
+      <Contents>
+        <Heading>Our Global Subscribers</Heading>
 
-      <CardContainer>
-        {users?.slice(skip, skip + PER_PAGE).map((user) => {
-          return (
-            <Card key={user.login.uuid}>
-              <Img src={user.picture.large} alt="user" />
-              <Contents>
-                <Name>
-                  {user.name.title} {user.name.first} {user.name.last}{" "}
-                </Name>
-                <Email>{user.email}</Email>
-                <Username>Username: {user.login.username}</Username>
-                <Gender>Gender: {user.gender}</Gender>
-                <Age>Age: {user.dob.age}</Age>
-                <Phone>Phone: {user.phone}</Phone>
-                <Country>Country: {user.location.country}</Country>
-              </Contents>
-            </Card>
-          );
-        })}
-      </CardContainer>
+        <CardWrapper>
+          {users?.slice(skip, skip + PER_PAGE).map((user) => {
+            return (
+              <Card key={user.login.uuid}>
+                <Img src={user.picture.large} alt="user" />
+                <CardContents>
+                  <h3>
+                    {user.name.title} {user.name.first} {user.name.last}{" "}
+                  </h3>
+                  <h4>{user.email}</h4>
+                  <p>Username: {user.login.username}</p>
+                  <p>Gender: {user.gender}</p>
+                  <p>Age: {user.dob.age}</p>
+                  <p>Phone: {user.phone}</p>
+                  <p>Country: {user.location.country}</p>
+                </CardContents>
+              </Card>
+            );
+          })}
+        </CardWrapper>
 
-      <PgNo>
-        Pages: {page} of {pages}
-      </PgNo>
+        <PgNo>
+          Pages: {page} of {pages}
+        </PgNo>
 
-      <Btn disabled={page <= 1} onClick={() => setPage((prev) => prev - 1)}>
-        prev
-      </Btn>
+        <Btn disabled={page <= 1} onClick={() => setPage((prev) => prev - 1)}>
+          prev
+        </Btn>
 
-      {Array.from({ length: pages }, (value, index) => index + 1).map(
-        (user) => (
-          <PgNosBtn key={user} onClick={() => setPage(user)}>
-            {user}
-          </PgNosBtn>
-        )
-      )}
-      <Btn
-        disabled={page >= pages}
-        aria-disabled={page >= pages}
-        onClick={() => setPage((prev) => prev + 1)}
-      >
-        next
-      </Btn>
+        {Array.from({ length: pages }, (value, index) => index + 1).map(
+          (user) => (
+            <PgNosBtn key={user} onClick={() => setPage(user)}>
+              {user}
+            </PgNosBtn>
+          )
+        )}
+        <Btn
+          disabled={page >= pages}
+          aria-disabled={page >= pages}
+          onClick={() => setPage((prev) => prev + 1)}
+        >
+          next
+        </Btn>
+      </Contents>
     </Container>
   );
 };

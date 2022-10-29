@@ -3,9 +3,9 @@ import UsersData from "../components/users/index";
 
 const Users = () => {
   return (
-    <>
+    <div>
       <UsersData />
-    </>
+    </div>
   );
 };
 

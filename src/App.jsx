@@ -10,8 +10,8 @@ import Loading from "./components/Loading";
 let Home = lazy(() => import("./pages/Home"));
 let UsersProfile = lazy(() => import("./pages/UsersProfile"));
 let Users = lazy(() => import("./pages/Users"));
-let User = lazy(() => import("./pages/User"));
-let Items = lazy(() => import("./pages/Items"));
+let ContactUs = lazy(() => import("./pages/Contact"));
+let AboutUs = lazy(() => import("./pages/About"));
 let Error = lazy(() => import("./pages/Error"));
 
 function App() {
@@ -32,10 +32,10 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/users" element={<Users />} />
               <Route path="/profile" element={<UsersProfile />}>
-                <Route path="users" element={<Users />} />
-                <Route path="items" element={<Items />} />
-                <Route path=":userId" element={<User />} />
+                <Route path="about-us" element={<AboutUs />} />
+                <Route path="contact-us" element={<ContactUs />} />
               </Route>
               <Route path="*" element={<Error />} />
             </Routes>

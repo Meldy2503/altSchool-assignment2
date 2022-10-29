@@ -21,8 +21,8 @@ const Navbar = () => {
     <Header>
       {data.map((list) => {
         return (
-          <IconsContainer>
-            <a key={list.id} href={list.link} target="_blank" rel="noreferrer">
+          <IconsContainer key={list.id}>
+            <a href={list.link} target="_blank" rel="noreferrer">
               <span>{list.icon}</span>
             </a>
           </IconsContainer>
@@ -37,7 +37,10 @@ const Navbar = () => {
               <Navlink to="/">home</Navlink>
             </li>
             <li>
-              <Navlink to="/profile">Profiles</Navlink>
+              <Navlink to="/profile">Profile</Navlink>
+            </li>
+            <li>
+              <Navlink to="/users">Users</Navlink>
             </li>
           </Ul>
           <MenuIcon onClick={handleClick}>
