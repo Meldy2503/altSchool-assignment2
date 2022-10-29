@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    position: relative;
+   
 
 
 @media screen and (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
@@ -31,7 +31,9 @@ html {
   body {
    font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
-  /* background-color: #000; */
+
+  
+ 
   
 }
 

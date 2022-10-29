@@ -21,7 +21,7 @@ const Contact = () => {
       email: "",
       message: "",
     });
-    console.log(value);
+    console.log(formData);
   };
 
   return (
@@ -45,8 +45,8 @@ const Contact = () => {
           <label htmlFor="email">
             <input
               type="email"
-              name={formData.emaIL}
-              id={formData.emaIL}
+              name={formData.email}
+              id={formData.email}
               onChange={handleFormData}
               value={formData.value}
               placeholder="Enter your emaIL"
@@ -55,8 +55,8 @@ const Contact = () => {
           </label>
           <br />
           <textarea
-            name="message"
-            id="message"
+            name={formData.message}
+            id={formData.message}
             cols="30"
             value={formData.value}
             onChange={handleFormData}

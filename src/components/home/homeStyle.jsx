@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 export const Container = styled.section`
   width: 100%;
   height: 100vh;
-  background-image: url(${bgImg});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url(${bgImg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: rgb(0 0 0 / 45%) 0px 100em 0px 0px inset;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,11 +34,12 @@ export const Contents = styled.div`
       letter-spacing: 0.3rem;
       word-spacing: 0.5rem;
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
 
       @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
         font-size: 6.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
       @media (max-width: ${({ theme }) => theme.mediaQuery.smobile}) {
         font-size: 5rem;
@@ -71,4 +72,8 @@ export const Link = styled(NavLink)`
   letter-spacing: 0.6rem;
   text-decoration: none;
   border-radius: 0.44rem;
+
+  &:hover {
+    background-color: #c4771f;
+  }
 `;

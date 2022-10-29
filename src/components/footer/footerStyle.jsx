@@ -6,20 +6,22 @@ export const Container = styled.footer`
   font-family: "Poppins", sans-serif;
   color: #fff;
   overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
 `;
 export const Contents = styled.div`
   width: 90%;
   max-width: 120rem;
   text-align: center;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1rem;
 
   p {
-    line-height: 2;
+    line-height: 1.7;
   }
 
   span {
     color: #f7992b;
   }
 `;
-export const Heading = styled.h2``;

@@ -21,10 +21,10 @@ const Users = () => {
 
   const getUsers = async () => {
     try {
-      //   setLoading(true);
+      setLoading(true);
       const response = await axios.get("https://randomuser.me/api/?results=60");
       setUsers(response.data.results);
-      //   setLoading(false);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -33,9 +33,9 @@ const Users = () => {
     getUsers();
   }, []);
 
-  //   if (loading) {
-  //     return <Loading />;
-  //   }
+  if (loading) {
+    return <Loading />;
+  }
   const PER_PAGE = 12;
   const total = users?.length;
   const pages = Math.ceil(total / PER_PAGE);

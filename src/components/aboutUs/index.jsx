@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Container, Row, Col1, Col2 } from "./aboutStyle";
 
 const About = () => {

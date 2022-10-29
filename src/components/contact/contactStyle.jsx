@@ -4,14 +4,15 @@ import bgImg from "../../assets/slide-3.jpg";
 export const Container = styled.section`
   width: 100%;
   color: #fff;
-  background-image: url(${bgImg});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(${bgImg});
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  box-shadow: rgb(0 0 0 / 80%) 0px 100em 0px 0px inset;
   padding: 10rem 0;
   overflow: hidden;
+  margin-bottom: 6rem;
 
   h2 {
     color: #f7992b;
@@ -25,6 +26,10 @@ export const Contents = styled.div`
   max-width: 120rem;
   text-align: center;
   margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
+    width: 95%;
+  }
 
   h2 {
     line-height: 1.4;
@@ -40,9 +45,7 @@ export const Form = styled.form`
     width: 85%;
   }
   @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
-    width: 95%;
-  }
-  label {
+    width: 100%;
   }
 
   input,

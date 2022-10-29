@@ -1,9 +1,9 @@
 import styled from "styled-components";
-
 import bgImg2 from "../../assets/slide-2.jpg";
 
 export const Container = styled.section`
   width: 100%;
+  margin-bottom: 6rem;
 `;
 
 export const Row = styled.div`
@@ -26,10 +26,6 @@ export const Row = styled.div`
   p {
     width: 70%;
     line-height: 2;
-
-    @media (max-width: 1200px) {
-      /* width: 60%; */
-    }
 
     @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
       width: 85%;
@@ -55,7 +51,6 @@ export const Col1 = styled.div`
 
   @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
     width: 100%;
-    /* margin: 0 auto; */
   }
 
   & > div {
@@ -95,7 +90,6 @@ export const Col2 = styled.div`
   & > div {
     background-color: rgb(247, 153, 43, 0.55);
     height: 100%;
-    /* width: 70%; */
     padding: 12rem 0 12rem 10rem;
 
     @media (max-width: 1200px) {
@@ -111,15 +105,4 @@ export const Col2 = styled.div`
   h2 {
     color: #fff;
   }
-
-  /* p {
-    width: 70%;
-
-    @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
-      width: 85%;
-    }
-    @media (max-width: ${({ theme }) => theme.mediaQuery.smobile}) {
-      width: 95%;
-    }
-  } */
 `;
