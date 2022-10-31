@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export const Container = styled.section`
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${bgImg});
   background-size: cover;
   background-repeat: no-repeat;
