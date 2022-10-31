@@ -9,23 +9,15 @@ export const Container = styled.section`
 export const Contents = styled.section`
   max-width: 120rem;
   width: 90%;
-  margin: 5rem auto 15rem auto;
-  padding-top: 10rem;
+  margin: 5rem auto;
+  padding-top: 8rem;
 
   @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
     width: 95%;
   }
 
   @media (max-width: 350px) {
-    padding-top: 15rem;
-  }
-
-  h2 {
-    margin: 6rem 0 2rem 0;
-  }
-
-  P {
-    line-height: 1.7;
+    padding-top: 13rem;
   }
 
   .navLink {
@@ -45,5 +37,44 @@ export const Contents = styled.section`
     text-decoration: none;
     border-left: 0.2rem solid #333;
     padding: 0 2rem;
+  }
+`;
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8rem;
+  padding-bottom: 5rem;
+
+  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+
+  div {
+    width: 47%;
+
+    @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 3.2rem;
+      font-family: "Oswald", sans-serif;
+    }
+
+    P {
+      line-height: 1.6;
+
+      @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
   }
 `;

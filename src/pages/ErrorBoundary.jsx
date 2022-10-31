@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
             justifyContent: "center",
             textAlign: "center",
             color: "#f7992b",
-            backgroundColor: "#000",
+            backgroundColor: "#090909",
             height: "100vh",
             width: "100%",
           }}

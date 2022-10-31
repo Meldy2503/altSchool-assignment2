@@ -4,7 +4,7 @@ import bgImg from "../../assets/slide-3.jpg";
 export const Container = styled.section`
   width: 100%;
   color: #fff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
     url(${bgImg});
   background-size: cover;
   background-repeat: no-repeat;
@@ -33,8 +33,8 @@ export const Contents = styled.div`
 
   h2 {
     line-height: 1.4;
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
   }
 `;
 export const Form = styled.form`
@@ -63,6 +63,10 @@ export const Form = styled.form`
 
     &::placeholder {
       color: #000;
+    }
+
+    &:focus {
+      border-bottom: 0.3rem solid #c77a22;
     }
   }
 `;

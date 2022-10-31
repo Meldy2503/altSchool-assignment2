@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Loading from "../../components/Loading";
 import {
@@ -18,6 +18,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const ref = useRef(null);
 
   const getUsers = async () => {
     try {
@@ -36,13 +37,13 @@ const Users = () => {
   if (loading) {
     return <Loading />;
   }
-  const PER_PAGE = 12;
+  const PER_PAGE = 6;
   const total = users?.length;
   const pages = Math.ceil(total / PER_PAGE);
   const skip = page * PER_PAGE - PER_PAGE;
 
   return (
-    <Container>
+    <Container ref={ref}>
       <Contents>
         <Heading>Our Global Subscribers</Heading>
 
@@ -71,13 +72,25 @@ const Users = () => {
           Pages: {page} of {pages}
         </PgNo>
 
-        <Btn disabled={page <= 1} onClick={() => setPage((prev) => prev - 1)}>
+        <Btn
+          disabled={page <= 1}
+          onClick={() => {
+            setPage((prev) => prev - 1);
+            ref.current?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           prev
         </Btn>
 
         {Array.from({ length: pages }, (value, index) => index + 1).map(
           (user) => (
-            <PgNosBtn key={user} onClick={() => setPage(user)}>
+            <PgNosBtn
+              key={user}
+              onClick={() => {
+                setPage(user);
+                ref.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               {user}
             </PgNosBtn>
           )
@@ -85,7 +98,10 @@ const Users = () => {
         <Btn
           disabled={page >= pages}
           aria-disabled={page >= pages}
-          onClick={() => setPage((prev) => prev + 1)}
+          onClick={() => {
+            setPage((prev) => prev + 1);
+            ref.current?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           next
         </Btn>

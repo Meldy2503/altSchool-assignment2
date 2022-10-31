@@ -1,35 +1,68 @@
 import styled from "styled-components";
-import bgImg2 from "../../assets/slide-2.jpg";
 
 export const Container = styled.section`
   width: 100%;
-  margin-bottom: 6rem;
+`;
+export const Contents = styled.div`
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+    width: 95%;
+  }
+`;
+export const Partners = styled.div`
+  margin-bottom: 10rem;
+
+  h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 3.2rem;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+    margin: 0 auto;
+
+    img {
+      max-width: 100%;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 `;
 
 export const Row = styled.div`
-  background-color: #fff;
-  color: #fff;
+  color: #000;
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
 
-  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+  @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
     flex-direction: column;
   }
 
   h2 {
     color: #f7992b;
     font-weight: bold;
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    font-size: 3.2rem;
     font-family: "Oswald", sans-serif;
   }
 
   p {
-    width: 70%;
-    line-height: 2;
-
-    @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
-      width: 85%;
-    }
+    width: 95%;
+    line-height: 1.8;
 
     @media (max-width: ${({ theme }) => theme.mediaQuery.smobile}) {
       width: 100%;
@@ -38,71 +71,111 @@ export const Row = styled.div`
 
   ul {
     margin-left: 5rem;
-    width: 70%;
+    width: 75%;
   }
   li {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 `;
 export const Col1 = styled.div`
-  background-color: #000;
-  width: 75%;
-  height: fit-content;
+  width: 47%;
 
-  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+  @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
     width: 100%;
-  }
-
-  & > div {
-    max-width: 70rem;
-    margin: 0 auto;
-    height: 100%;
-    width: 70%;
-    padding: 13rem 0rem 13rem 0;
-
-    @media (max-width: 1200px) {
-      margin: 0 10%;
-    }
-
-    @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
-      padding: 8rem 2.5rem;
-      margin: 0;
-      max-width: 100%;
-      width: 100%;
-    }
   }
 `;
-export const Col2 = styled.div`
-  background-image: url(${bgImg2});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 50%;
-  margin-top: 15rem;
-  margin-left: -25rem;
-
-  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
-    width: 100%;
-    margin-top: 0;
-    margin-left: 0;
+export const Col2 = styled(Col1)`
+  @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
+    margin-top: 4rem;
   }
+`;
+
+export const PriceWrapper = styled.div`
+  width: 100%;
+  background-color: #090909;
+  color: #fff;
+  padding: 10rem 0 20rem 0;
+`;
+export const Price = styled.div`
+  margin: 0 auto;
+  width: 90%;
+  max-width: 120rem;
+
+  & > h4 {
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+    opacity: 0.9;
+  }
+  & > p {
+    width: 80%;
+    margin: 3rem 0 5rem 0;
+    opacity: 0.8;
+    line-height: 1.8;
+  }
+`;
+export const Cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 
   & > div {
-    background-color: rgb(247, 153, 43, 0.55);
-    height: 100%;
-    padding: 12rem 0 12rem 10rem;
+    width: 32%;
+    height: 55rem;
+    padding: 8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s;
 
-    @media (max-width: 1200px) {
-      padding: 10rem 0 10rem 3rem;
+    &:hover {
+      transform: translateY(-2px) scale(1.07);
     }
 
     @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
-      padding: 8rem 2.5rem;
-      margin: 0;
+      width: 45%;
+      margin: 0 auto 4rem auto;
     }
-  }
+    @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
+      width: 70%;
+    }
+    @media (max-width: 500px) {
+      width: 95%;
+    }
 
-  h2 {
-    color: #fff;
+    h3,
+    h1 {
+      font-family: "Oswald", sans-serif;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    h1 {
+      display: flex;
+      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 3.5rem;
+
+      span {
+        font-size: 6.5rem;
+      }
+    }
+
+    ul {
+      li {
+        margin-top: 1.7rem;
+        font-size: 1.8rem;
+        opacity: 0.8;
+        list-style-type: circle;
+        position: relative;
+      }
+    }
   }
 `;

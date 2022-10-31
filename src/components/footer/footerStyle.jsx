@@ -18,7 +18,7 @@ export const Contents = styled.div`
   padding: 1rem;
 
   p {
-    line-height: 1.7;
+    line-height: 1.4;
   }
 
   span {

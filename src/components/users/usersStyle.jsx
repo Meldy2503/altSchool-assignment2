@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  background-color: #3d3d3d;
+  background-color: #535353;
   width: 100%;
   color: #fff;
 `;
@@ -39,9 +39,9 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #090909;
+  background-color: #1f1e1e;
   margin: 1rem;
-  box-shadow: -1rem -0.9rem 1rem 0.5rem #000;
+  box-shadow: rgba(0, 0, 0) 5px 10px 19px, rgba(0, 0, 0) 5px 6px 6px;
   position: relative;
   margin-bottom: 9rem;
   transition: all 0.3s;
