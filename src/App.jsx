@@ -13,6 +13,7 @@ let Users = lazy(() => import("./pages/Users"));
 let ContactUs = lazy(() => import("./pages/Contact"));
 let AboutUs = lazy(() => import("./pages/About"));
 let Error = lazy(() => import("./pages/Error"));
+import ErrorTest from "./components/ErrorTest";
 
 function App() {
   const theme = {
@@ -33,10 +34,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/users" element={<Users />} />
-              <Route path="/profile" element={<UsersProfile />}>
-                <Route path="about-us" element={<AboutUs />} />
-                <Route path="contact-us" element={<ContactUs />} />
-              </Route>
+              <Route path="/profile" element={<UsersProfile />} />
+              <Route path="/profile/about-us" element={<AboutUs />} />
+              <Route path="/profile/contact-us" element={<ContactUs />} />
+              <Route path="/error-test" element={<ErrorTest />} />
               <Route path="*" element={<Error />} />
             </Routes>
             <Footer />

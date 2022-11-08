@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bgImg from "../../assets/slide-3.jpg";
+import { Link } from "react-router-dom";
 
 export const Container = styled.section`
   width: 100%;
@@ -24,20 +25,36 @@ export const Container = styled.section`
 export const Contents = styled.div`
   width: 90%;
   max-width: 120rem;
-  text-align: center;
-  margin: 0 auto;
+  margin: 1.5rem auto 0 auto;
 
   @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
     width: 95%;
   }
 
+  @media (max-width: 350px) {
+    margin: 6rem auto 0 auto;
+  }
+
   h2 {
+    text-align: center;
     line-height: 1.4;
     font-size: 3.5rem;
-    margin-bottom: 4rem;
+    margin: 5rem 0 3rem 0;
   }
 `;
+
+export const BackLink = styled(Link)`
+  font-weight: bold;
+  border-left: 0.25rem solid #777;
+  border-right: 0.25rem solid #777;
+  color: #f7992b;
+  padding: 0 1.2rem;
+  font-size: 1.9rem;
+  text-decoration: none;
+`;
+
 export const Form = styled.form`
+  text-align: center;
   width: 75%;
   margin: 0 auto;
 

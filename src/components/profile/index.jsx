@@ -1,29 +1,21 @@
-import React, { useRef } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import aboutImg from "../../assets/slide-3.jpg";
 
 import { Container, Contents, Row } from "./profileStyle";
 
 const Profile = () => {
-  const ref = useRef(null);
-
-  const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <Container>
       <Contents>
         <NavLink
           to="/profile/about-us"
-          onClick={handleClick}
           className={(navLink) => (navLink.isActive ? "active" : "navLink")}
         >
           About us
         </NavLink>
         <NavLink
           to="/profile/contact-us"
-          onClick={handleClick}
           className={(navLink) => (navLink.isActive ? "active" : "navLink")}
         >
           Contact us
@@ -49,7 +41,6 @@ const Profile = () => {
           </div>
         </Row>
       </Contents>
-      <div ref={ref}></div>
     </Container>
   );
 };

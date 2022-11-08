@@ -9,6 +9,7 @@ import {
   Price,
   Cards,
   PriceWrapper,
+  BackLink,
 } from "./aboutStyle";
 import { data, price } from "./data";
 
@@ -16,6 +17,7 @@ const About = () => {
   return (
     <Container>
       <Contents>
+        <BackLink to="/profile">Back</BackLink>
         <Row>
           <Col1>
             <div>

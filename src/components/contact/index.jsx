@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Contents, Form, Btn } from "./contactStyle";
+import { Container, Contents, Form, Btn, BackLink } from "./contactStyle";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +27,7 @@ const Contact = () => {
   return (
     <Container>
       <Contents>
+        <BackLink to="/profile">Back</BackLink>
         <h2>Get in touch with us</h2>
 
         <Form>

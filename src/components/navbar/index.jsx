@@ -45,6 +45,15 @@ const Navbar = () => {
               Users
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              onClick={closeMenuLink}
+              to="/error-test"
+              className={(navLink) => (navLink.isActive ? "active" : "navLink")}
+            >
+              Error Test
+            </NavLink>
+          </li>
         </Ul>
         <MenuIcon onClick={handleClick}>
           <Hamburger

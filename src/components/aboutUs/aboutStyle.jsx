@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.section`
   width: 100%;
@@ -6,11 +7,23 @@ export const Container = styled.section`
 export const Contents = styled.div`
   width: 90%;
   max-width: 120rem;
-  margin: 0 auto;
+  margin: 12rem auto 0 auto;
 
   @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
     width: 95%;
   }
+  @media (max-width: 350px) {
+    margin: 17rem auto 0 auto;
+  }
+`;
+export const BackLink = styled(Link)`
+  font-weight: bold;
+  border-left: 0.2rem solid #333;
+  border-right: 0.2rem solid #333;
+  color: #f7992b;
+  padding: 0 1.2rem;
+  font-size: 1.9rem;
+  text-decoration: none;
 `;
 export const Partners = styled.div`
   margin-bottom: 10rem;
@@ -79,6 +92,7 @@ export const Row = styled.div`
 `;
 export const Col1 = styled.div`
   width: 47%;
+  margin-top: 5rem;
 
   @media (max-width: ${({ theme }) => theme.mediaQuery.mobile}) {
     width: 100%;
